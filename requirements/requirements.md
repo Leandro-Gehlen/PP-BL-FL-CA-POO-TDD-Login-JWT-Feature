@@ -1,4 +1,4 @@
-# Login Feature  
+# Login Feature 
 
 ## User roadmap  
 
@@ -9,12 +9,20 @@
 
 ## Entities  
 
->user
+> user
+> auth
 
-## Usecases  
+## Usecases user  
 
-> register  
-> login  
-> routing  
-> session
+> CRUD user
+> validate user data
+
+## usecases auth  
+
+> create a new token
+> verify token
+> create a new refresh token
+> verify refreshtoken
+> cookie manager
+> authorization middleware
 
