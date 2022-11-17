@@ -4,8 +4,10 @@
 
 
 > I need that the user is able to register.
-> After that , he should be able to login with his email > and password and have access to the dashboard area page.
-> Also, after close the browser, he should be able to    > came back and still be logged in.
+> After that , he should be able to login with his email 
+> and password and have access to the dashboard area page.
+> Also, after close the browser, he should be able to    
+> came back and still be logged in.
 
 ## Entities  
 
@@ -17,7 +19,7 @@
 > CRUD user
 > validate user data
 
-## usecases auth  
+## Usecases auth  
 
 > create a new token
 > verify token
