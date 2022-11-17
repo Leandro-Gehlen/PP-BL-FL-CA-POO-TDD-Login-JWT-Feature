@@ -21,10 +21,10 @@
 
 ## Usecases auth  
 
-> create a new token
-> verify token
-> create a new refresh token
-> verify refreshtoken
-> cookie manager
-> authorization middleware
+> create a new token  
+> verify token  
+> create a new refresh token  
+> verify refreshtoken  
+> cookie manager  
+> authorization middleware  
 
