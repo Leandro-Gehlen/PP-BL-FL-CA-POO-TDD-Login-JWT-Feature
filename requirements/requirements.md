@@ -16,7 +16,7 @@
 
 ## Usecases user  
 
-> CRUD user
+> CRUD user  
 > validate user data
 
 ## Usecases auth  
