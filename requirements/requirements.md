@@ -16,7 +16,14 @@
 
 ## Usecases user  
 
-> CRUD user  
++ Create User
+    + tests  
+        + Ensure that we´ve received users email.  Otherwise, return statusCode 400.
+        + Ensure that we´ve received users password. Otherwise, return statusCode 400.
+        + Ensure that we´ve received users name. Otherwise, return statusCode 400.
+        + Ensure that we´ve received users surname. Otherwise, return statusCode 400.
+        + Ensure we create a new user_id to the new user.
+> RUD user  
 > validate user data
 
 ## Usecases auth  
