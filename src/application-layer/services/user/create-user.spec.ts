@@ -2,7 +2,7 @@ import { Http2ServerResponse } from "http2"
 
 export class CreateUser {
     perform(httpRequest: httpRequest): httpResponse {
-        if (!httpRequest.body.name) {
+        if (!httpRequest.body.name || !httpRequest.body.password || !httpRequest.body.email) {
 
             return { statusCode: 400 }
         }
@@ -13,6 +13,8 @@ export class CreateUser {
 type httpRequest = {
     body: {
         name?: string
+        password?: string
+        email?: string
     }
 }
 
@@ -26,6 +28,37 @@ describe('CreateUser', () => {
         const sut = new CreateUser()
         const httpRequest = {
             body: {}
+        }
+        const httpResponse = sut.perform(httpRequest)
+
+
+        expect(httpResponse.statusCode).toBe(400)
+    })
+});
+
+describe('CreateUser', () => {
+    it('Should return statusCode 400 if password wasn´t passed by the user input', () => {
+        const sut = new CreateUser()
+        const httpRequest = {
+            body: {
+                name: "any_name"
+            }
+        }
+        const httpResponse = sut.perform(httpRequest)
+
+
+        expect(httpResponse.statusCode).toBe(400)
+    })
+});
+
+describe('CreateUser', () => {
+    it('Should return statusCode 400 if email wasn´t passed by the user input', () => {
+        const sut = new CreateUser()
+        const httpRequest = {
+            body: {
+                name: "any_name",
+                password: "any_password"
+            }
         }
         const httpResponse = sut.perform(httpRequest)
 
