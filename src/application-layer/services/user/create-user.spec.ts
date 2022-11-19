@@ -1,4 +1,4 @@
-import { Http2ServerResponse } from "http2"
+
 
 export class CreateUser {
     perform(httpRequest: httpRequest): httpResponse {
@@ -69,7 +69,7 @@ describe('CreateUser', () => {
 });
 
 describe('CreateUser', () => {
-    it('Should return statusCode 400 if email wasn´t passed by the user input', () => {
+    it('Should return statusCode 400 if surname wasn´t passed by the user input', () => {
         const sut = new CreateUser()
         const httpRequest = {
             body: {
