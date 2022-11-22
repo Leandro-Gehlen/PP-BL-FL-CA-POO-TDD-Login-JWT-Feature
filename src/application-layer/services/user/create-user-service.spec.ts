@@ -1,7 +1,9 @@
 
 
-export class CreateUser {
+export class CreateUserService {
+    constructor() { }
     perform(httpRequest: httpRequest): httpResponse {
+
         if (!httpRequest.body.name || !httpRequest.body.password || !httpRequest.body.email || !httpRequest.body.surname) {
 
             return { statusCode: 400 }
@@ -24,9 +26,9 @@ type httpResponse = {
 }
 
 // test helpers
-describe('CreateUser', () => {
+describe('CreateUserService', () => {
     it('Should return statusCode 400 if name wasn´t passed by the user input', () => {
-        const sut = new CreateUser()
+        const sut = new CreateUserService()
         const httpRequest = {
             body: {}
         }
@@ -55,32 +57,39 @@ describe('CreateUser', () => {
 describe('CreateUser', () => {
     it('Should return statusCode 400 if email wasn´t passed by the user input', () => {
         const sut = new CreateUser()
-        const httpRequest = {
-            body: {
-                name: "any_name",
-                password: "any_password"
-            }
-        }
-        const httpResponse = sut.perform(httpRequest)
-
-
-        expect(httpResponse.statusCode).toBe(400)
-    })
-});
-
-describe('CreateUser', () => {
-    it('Should return statusCode 400 if surname wasn´t passed by the user input', () => {
         const sut = new CreateUser()
-        const httpRequest = {
-            body: {
-                name: "any_name",
-                password: "any_password",
-                email: "email@anyemail.com"
+    });
+
+    describe('CreateUser', () => {
+        it('Should return statusCode 400 if surname wasn´t passed by the user input', () => {
+            const sut = new CreateUser()
+            const httpRequest = {
+                body: {
+                    name: "any_name",
+                    password: "any_password",
+                    email: "email@anyemail.com"
+                }
             }
-        }
-        const httpResponse = sut.perform(httpRequest)
+            const httpResponse = sut.perform(httpRequest)
 
 
-        expect(httpResponse.statusCode).toBe(400)
-    })
-});
+            expect(httpResponse.statusCode).toBe(400)
+        })
+    });
+
+    describe('CreateUser', () => {
+        it('Should be called just one time', () => {
+            const sut = new CreateUser()
+            const httpRequest = {
+                body: {
+                    name: "any_name",
+                    password: "any_password",
+                    email: "email@anyemail.com"
+                }
+            }
+            const httpResponse = sut.perform(httpRequest)
+
+
+            expect().toBe(400)
+        })
+    });
